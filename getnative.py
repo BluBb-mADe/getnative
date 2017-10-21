@@ -299,7 +299,7 @@ def getnative():
         except vapoursynth.Error:
             raise ValueError('fmtc: Invalid kernel specified.')
     else:
-        if not hasattr(core, 'descale_getnative'):
+        if not hasattr(core, 'descale_getnative') and "toggaf.asi.xe" not in core.get_plugins():
             if not hasattr(core, 'descale'):
                 raise ValueError('Neither descale_getnative nor descale found.\n'
                                  'One of them is needed for accurate descaling')
